@@ -1,0 +1,506 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #1A1A1D;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+/* Utils */
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 12;
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+}
+
+.flex-gap-20 {
+    gap: 20px;
+}
+
+.flex-gap-100 {
+    gap: 100px;
+}
+
+.flex-gap-row-20 {
+    row-gap: 20px;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-5 {
+    flex: 5;
+}
+
+.flex-7 {
+    flex: 7;
+}
+
+.flex-6 {
+    flex: 1;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.color--main {
+    color: #FFE766;
+}
+
+.color--white {
+    color: white;
+}
+
+.color--cecece {
+    color: #CECECE;
+}
+
+.bgc--black {
+    background-color: #1A1A1D;
+}
+
+.bgc--gradient-main {
+    background-image: url('./assets/gradient.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    position: relative;
+}
+
+.fw-regular {
+    font-weight: 400;
+}
+
+.fw-medium {
+    font-weight: 500;
+}
+
+.fw-semi-bold {
+    font-weight: 600;
+}
+
+.fw-bold {
+    font-weight: 700;
+}
+
+.fs-80 {
+    font-size: 80px;
+}
+
+.fs-70 {
+    font-size: 70px;
+}
+
+.fs-50 {
+    font-size: 50px;
+}
+
+.fs-28 {
+    font-size: 28px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.lh-114per {
+    line-height: 114%;
+}
+
+.lh-145per {
+    line-height: 145%;
+}
+
+.lh-150per {
+    line-height: 150%;
+}
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.button--main {
+    background: #FFE766;
+    box-shadow: 0px 25px 50px rgba(255, 231, 102, 0.06);
+    color: #1A1A1D;
+    padding: 14px 35px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.button--secondary {
+    padding: 14px 21px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    border: 1px solid #FFE766;
+    color: #FFE766;
+    background-color: transparent;
+}
+
+/* Styling */
+.nav {
+    justify-content: space-between;
+    padding: 18px 0;
+    position: fixed;
+    width: calc(100% - 200px);
+    align-items: center;
+    transition: all .3s;
+    padding-left: 100px;
+    padding-right: 100px;
+    z-index: 99;
+}
+
+.nav.scrolled {
+    background-color: white;
+    box-shadow: 0px 0px 20px 0px rgba(112, 112, 117, 0.75);
+
+}
+
+.nav.scrolled h1 {
+    color: #1A1A1D;
+}
+
+.nav.scrolled .nav__items__item{
+    color: #1A1A1D;
+}
+
+.nav__logo h1 {
+    margin-left: 15px;
+}
+
+.nav__items__item {
+    margin-left: 50px;
+}
+
+.header {
+    height: 100vh;
+}
+
+.header__left {
+    padding-top: 120px;
+}
+
+.header__left__social {
+    padding: 30px 0 50px 0;
+}
+
+.header__left__social img {
+    margin-right: 20px;
+}
+
+.header__left__quote__box {
+    padding: 30px;
+    border: 2px solid #FFFFFF;
+    margin-top: 20px;
+}
+
+.header__left__quote__box h3 {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.header__right {
+    padding-top: 120px;
+}
+
+.header__right__button {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.header__right__button button:nth-child(1) {
+    margin-right: 20px;
+}
+
+.wrapper--header-left {
+    margin-left: 100px;
+    margin-right: 67px;
+}
+
+.wrapper--header-right {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.expertise {
+    margin-top: 114px;
+}
+
+.expertise p {
+    padding-left: 28px;
+}
+
+.card-skills {
+    margin-top: 50px;
+}
+
+.card-skills__content {
+    border: 1px solid #CECECE;
+    min-height: 349px;
+}
+
+.card-skills__content .main-text {
+    padding: 30px;
+}
+
+.card-skills__content .main-text p {
+    margin-top: 20px;
+}
+
+.card-skills button {
+    padding: 12px 20px;
+    border: 1px solid #FFE766;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    color: #FFE766;
+    font-size: 16px;
+}
+
+.card-skills button img {
+    margin-left: 61px;
+}
+
+.portofolio {
+    margin-top: 100px;
+}
+
+.portofolio .portofolio__title {
+    text-align: center;
+}
+
+.portofolio .portofolio__title p {
+    margin-top: 20px;
+}
+
+.portofolio .portofolio__grid {
+    margin-top: 54px;
+    display: grid;
+    grid-template-columns: 58fr 41fr;
+    align-items: stretch;
+    grid-gap: 15px;
+}
+
+.portofolio .portofolio__grid img:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.portofolio .portofolio__grid img:nth-child(2) {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.portofolio__grid img:nth-child(3) {
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+
+.portofolio__grid img:nth-child(4) {
+    grid-column: 1/2;
+    grid-row: 3/5;
+}
+
+.portofolio__grid img:nth-child(5) {
+    grid-column: 2/3;
+    grid-row: 4/6;
+}
+
+.portofolio__grid img:nth-child(6) {
+    grid-column: 1/2;
+    grid-row: 5/7;
+}
+
+.portofolio__grid__card {
+    grid-column: 2/3;
+    grid-row: 6/7;
+    padding: 30px 20px;
+    background-image: url('./assets/gradient_2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.portofolio__grid__card p {
+    margin-top: 30px;
+}
+
+.portofolio .portofolio__grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portofolio .portofolio__grid .d-flex {
+    padding-top: 30px;
+}
+
+.button-portofolio-main {
+    color: #FFE766;
+    padding: 19px 0;
+    background-color: transparent;
+    border: 1px solid #FFE766;
+}
+
+.button-portofolio-secondary {
+    color: #FFE766;
+    padding: 19px 0;
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+}
+
+.experience {
+    position: relative;
+    margin-top: 100px;
+}
+
+.experience--box-gradient {
+    position: absolute;
+    top: -270px;
+    z-index: -1;
+}
+
+.experience__lists {
+    padding: 0 20px;
+    border: 1px solid #CECECE;
+}
+
+.experience__lists__item {
+    padding: 20px;
+    border: 1px solid white;
+    border-bottom: 1px solid #CECECE;
+    margin-top: 20px;
+}
+
+.rate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 100px;
+    border: 15px solid;
+    border-image: linear-gradient(to right, #EC2929 -7.33%, #9C0CB3 24.7%, #242CE3 56.11%, #095EAC 85%, #09E11E 113.27%);
+    border-image-slice: 1;
+    margin-top: 100px;
+}
+
+#form {
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+}
+
+#form iframe {
+    width: 100%;
+    height: 600px;
+}
+
+.footer {
+    margin-top: 100px;
+}
+
+.footer p {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.footer__content {
+    background-image: url('./assets/gradient_3.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px 150px;
+    text-align: center;
+}
+
+.button--footer {
+    padding: 14px 77px;
+    background-color: #FFE766;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    color: #273B58;
+    margin-top: 64px;
+}
+
+
+
+@media screen and (max-width: 992px) {
+    .flex-md-12 {
+        flex: 0 0 100%;
+    }
+
+    .header {
+        height: auto;
+    }
+}
