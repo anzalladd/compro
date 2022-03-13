@@ -14,12 +14,35 @@
 
 <body>
     <!-- Navbar -->
-    <div class="nav d-flex">
-        <div class="nav__logo d-flex">
-            <img src="./assets/logo.svg" alt="Logo">
-            <h1 class="fs-24 color--white fw-semi-bold">Yacob Krisna</h1>
+    <nav class="wrapper-nav">
+        <div class="nav d-flex">
+            <div class="nav__logo d-flex">
+                <img src="./assets/logo.svg" alt="Logo">
+                <h1 class="fs-24 color--white fw-semi-bold">Yacob Krisna</h1>
+            </div>
+            <div class="nav__items d-flex nav__large">
+                <div class="nav__items__item color--white fs-14">
+                    Home
+                </div>
+                <div class="nav__items__item color--white fs-14">
+                    Dribble
+                </div>
+                <div class="nav__items__item color--white fs-14">
+                    Medium
+                </div>
+                <div class="nav__items__item color--white fs-14">
+                    Contact
+                </div>
+            </div>
+            <div class="nav__items d-flex nav__mobile" id="menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.2 4C0.537258 4 0 4.53726 0 5.2C0 5.86274 0.537259 6.4 1.2 6.4H22.8C23.4627 6.4 24 5.86274 24 5.2C24 4.53726 23.4627 4 22.8 4H1.2ZM14.2 11.2C13.5373 11.2 13 11.7373 13 12.4C13 13.0627 13.5373 13.6 14.2 13.6H22.8C23.4627 13.6 24 13.0627 24 12.4C24 11.7373 23.4627 11.2 22.8 11.2H14.2ZM9.2 18.4C8.53726 18.4 8 18.9373 8 19.6C8 20.2627 8.53726 20.8 9.2 20.8H22.8C23.4627 20.8 24 20.2627 24 19.6C24 18.9373 23.4627 18.4 22.8 18.4H9.2Z"
+                        fill="white" />
+                </svg>
+            </div>
         </div>
-        <div class="nav__items d-flex">
+        <div class="nav__items__mobile">
             <div class="nav__items__item color--white fs-14">
                 Home
             </div>
@@ -33,7 +56,6 @@
                 Contact
             </div>
         </div>
-    </div>
     </nav>
     <!-- Main Content -->
     <main>
@@ -41,7 +63,7 @@
         <header class="header row">
             <div class="header__left flex-6 flex-md-12 bgc--gradient-main">
                 <div class="wrapper--header-left">
-                    <img src="./assets/photo.png" alt="photo" height="120" width="120">
+                    <img src="./assets/photo.png" alt="photo" height="80" width="80">
                     <h1 class="color--white fs-80 fw-bold"><span class="color--main">Holla</span> , I'm <br>Yacob Krisna
                     </h1>
                     <div class="header__left__social d-flex">
@@ -223,14 +245,6 @@
                 </div>
             </div>
         </div>
-        <!-- Rate Website -->
-        <div class="container">
-            <div class="rate">
-                <h1 class="fw-bold fs-50 color--white">How much do <span class="color--main">you love</span>
-                    this<br>website?</h1>
-                <div id="form" class="rate__form"></div>
-            </div>
-        </div>
         <!-- Footer -->
         <div class="container">
             <footer class="footer">
@@ -249,19 +263,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://embed.typeform.com/next/embed.js"></script>
 <script>
-    const {
-        refresh,
-        unmount
-    } = window.tf.createWidget('PoO81K', {
-        container: document.querySelector('#form'),
-        hideFooter: true,
-        hideHeader: true,
-    })
     $(function () {
         $(document).scroll(function () {
-            const $nav = $(".nav");
+            const $nav = $(".wrapper-nav");
             $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+
         });
+        $('#menu').click(() => {
+            if ($('.wrapper-nav').hasClass('active-nav-mobile')) {
+                $('.wrapper-nav').removeClass('active-nav-mobile')
+            } else {
+                $('.wrapper-nav').addClass('active-nav-mobile')
+            }
+        })
     });
 </script>
 
